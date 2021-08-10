@@ -54,7 +54,7 @@
             style="@style/Widget.TipTime.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:text="@string/how_was_the_service"
             app:layout_constraintStart_toStartOf="@id/cost_of_service"
             app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
@@ -133,10 +133,10 @@
             style="@style/Widget.TipTime.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calculate_button"
-            tools:text="Tip Amount: $10" />
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Tip Amount: $10"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/total_result"
             app:layout_constraintTop_toBottomOf="@id/tip_result"
@@ -144,6 +144,7 @@
             style="@style/Widget.TipTime.TextView"
             tools:text="Total you will pay: $110"
             android:textStyle="bold"
+            android:textColor="#EA0606"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

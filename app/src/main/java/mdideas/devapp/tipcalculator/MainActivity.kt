@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         // Calculate the tip
         var tip = tipPercentage * cost
 
+        val totalPay = tip + cost
 
         // If the switch for rounding up the tip toggled on (isChecked is true), then round up the
         // tip. Otherwise do not change the tip value.
@@ -72,7 +73,13 @@ class MainActivity : AppCompatActivity() {
 
         // Display the formatted tip value onscreen
         displayTip(tip)
+        dispalyTotal(totalPay)
 
+    }
+
+    private fun dispalyTotal(totalPay: Double) {
+        val formattedTotal = NumberFormat.getCurrencyInstance().format(totalPay)
+        binding.totalResult.text = getString(R.string.total_pay, formattedTotal)
     }
 
     /**
@@ -84,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
 
     }
+
 
     /**
      * Key listener for hiding the keyboard when the "Enter" button is tapped.

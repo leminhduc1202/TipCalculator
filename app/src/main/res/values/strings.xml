@@ -25,4 +25,6 @@
 
     <!-- Formatted string for the tip result  -->
     <string name="tip_amount">Tip Amount: %s</string>
+
+
 </resources>

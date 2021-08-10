@@ -11,7 +11,7 @@ import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
-    // Binding object instance with access to the views in the activity_main.xml layout
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,11 +53,13 @@ class MainActivity : AppCompatActivity() {
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
-            else -> 0.15
+            R.id.option_fifteen_percent -> 0.15
+            else -> ((binding.optionMore.text.toString().toDouble())/100)
         }
 
         // Calculate the tip
         var tip = tipPercentage * cost
+
 
         // If the switch for rounding up the tip toggled on (isChecked is true), then round up the
         // tip. Otherwise do not change the tip value.
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         // Display the formatted tip value onscreen
         displayTip(tip)
+
     }
 
     /**
@@ -79,6 +82,7 @@ class MainActivity : AppCompatActivity() {
     private fun displayTip(tip: Double) {
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
+
     }
 
     /**

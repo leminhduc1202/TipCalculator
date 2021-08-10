@@ -1,6 +1,6 @@
 <resources>
     <!-- App name -->
-    <string name="app_name">Tip Time</string>
+    <string name="app_name">Tip Calculator MDapp</string>
 
     <!-- Hint text for editable text field where the user enters the cost of service -->
     <string name="cost_of_service">Cost of Service</string>
